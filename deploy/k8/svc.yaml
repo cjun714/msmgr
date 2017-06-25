@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: go-demo
+  labels:
+    name: go-demo
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 31333
+    targetPort: 8080
+    port: 8080
+  selector:
+    name: go-demo
